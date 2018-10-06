@@ -1,0 +1,42 @@
+#Challenge 1
+def merge_the_tool(string,k):
+    a = len(string) / k
+    for i in range(0,a):
+        b = string[i*k:i*k+k]
+        
+        c = []
+        for j in b:
+            if j not in c:
+                c.append(j)
+        print ''.join(c)
+
+#Challenge 2
+def minion_game(string):
+    vowel = "AEIOU"
+    countS = 0
+    countK = 0
+    for i in range(0,len(string)):
+        if string[i] not in vowel:
+            countS = countS + len(string) - i
+        else:
+            countK = countK + len(string) - i
+
+    if countS > countK:
+        print "Stuart", countS
+    elif countS < countK:
+        print "Kevin", countK
+    else:
+        print "Draw"
+
+
+#Challenge 3
+N = int(raw_input())
+if (N % 2) != 0:
+    print "Weird"
+else:
+    if N >= 2 and N <= 5:
+        print "Not Weird"
+    elif N >= 6 and N <= 20:
+        print "Weird"
+    elif N > 20:
+        print "Not Weird"
